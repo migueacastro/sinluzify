@@ -6,9 +6,6 @@ class SinLuzStore {
 	jornadaType = $state(browser ? (localStorage.getItem('sinluzify_jornada_type') || 'presencial') : 'presencial');
 	startTime = $state(browser ? (localStorage.getItem('sinluzify_start_time') ? Number(localStorage.getItem('sinluzify_start_time')) : null) : null);
 	
-	// Hardcoded URL - User should replace this value here
-	scriptUrl = 'TU_URL_DE_APPS_SCRIPT_AQUI';
-	
 	toast = $state({ message: '', type: 'info', visible: false });
 
 	// Derived states for reactivity (Svelte 5)

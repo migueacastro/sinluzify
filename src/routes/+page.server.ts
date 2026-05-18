@@ -1,4 +1,5 @@
-import { sendToAppsScript, SCRIPT_URL, type AppsScriptPayload } from '$lib/api/utils';
+import { sendToAppsScript, type AppsScriptPayload } from '$lib/api/utils';
+import { PUBLIC_SCRIPT_URL } from '$env/static/public';
 import { fail, type Actions } from '@sveltejs/kit';
 
 export const actions = {
@@ -18,7 +19,7 @@ export const actions = {
 		}
 
 		try {
-			await sendToAppsScript(SCRIPT_URL, payload);
+			await sendToAppsScript(PUBLIC_SCRIPT_URL, payload);
 			return { success: true, action: payload.action };
 		} catch (e: any) {
 			console.error('Action error:', e);
